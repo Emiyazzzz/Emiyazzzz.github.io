@@ -75,6 +75,61 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-C语言指针笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/08/22/C%E8%AF%AD%E8%A8%80%E6%8C%87%E9%92%88%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2025-08-22T13:44:06.117Z" itemprop="datePublished">2025-08-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="对指针的理解"><a href="#对指针的理解" class="headerlink" title="对指针的理解"></a>对指针的理解</h2><p><strong>地址：</strong></p>
+<p>计算机内存像一排连续的房间。每个房间（内存单元）都有一个唯一的门牌号，这个门牌号就是地址。</p>
+<p>变量在定义时，系统会分配一个房间（内存空间） 给它，并给它一个地址。</p>
+<p><strong>指针：</strong></p>
+<p>指针本质上是一个特殊类型的变量。它不存储普通数据（如整数、字符），而是专门用来存储内存地址</p>
+<p><strong>声明指针：</strong> 数据类型 *指针变量名;</p>
+<p>**取址运算符 &amp;：**获取一个变量的内存地址。</p>
+<p>**解引用运算符 *：**访问指针所指向的内存地址中存储的值。</p>
+<p><strong>指针的类型</strong> (int*, float*, char*) 决定了：</p>
+<p>解引用时访问多少字节内存： int* 解引用访问 4 个字节 (通常)，char* 解引用访问 1 个字节。</p>
+<p><strong>指针加减运算</strong>：ptr + 1 ：加 sizeof(数据类型) 个字节。</p>
+<p><strong>指针与数组的关系</strong>：数组名在大多数情况下，会自动转换为指向数组第一个元素的指针常量</p>
+<p>int arr[5] &#x3D; {1, 2, 3, 4, 5};</p>
+<p>int *ptr &#x3D; arr; &#x2F;&#x2F; 等价于 int *ptr &#x3D; &amp;arr[0];</p>
+<p>printf(“第一个元素：%d\n”, *ptr); 输出：1 (arr[0])</p>
+<p>printf(“第二个元素：%d\n”, *(ptr + 1)); 输出：2 (arr[1])</p>
+<p><strong>区别：</strong></p>
+<p>arr 是指针常量（地址值不能改），ptr 是指针变量（地址值可以改）。</p>
+<p>sizeof(arr) 得到整个数组的字节大小，sizeof(ptr) 得到指针变量本身的字节大小</p>
+<p><strong>指针与字符串</strong></p>
+<p>C语言中字符串通常用 char 数组表示。</p>
+<p>常用 char * 指针来操作字符串</p>
+<p><strong>注意</strong>： char *strPtr &#x3D; “World”; 中的 “World” 是字符串常量，不能通过 strPtr 修改其内容（如 *strPtr &#x3D; ‘A’; ）。用字符数组定义的字符串可以修改</p>
+<p><strong>指针的应用</strong></p>
+<p>指针作为函数参数 (传址调用)。</p>
+<p>动态内存分配： malloc，free</p>
+<p>指向指针的指针 (多级指针)： int **pp;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/08/22/C%E8%AF%AD%E8%A8%80%E6%8C%87%E9%92%88%E7%AC%94%E8%AE%B0/" data-id="cmemwnh9c0001ygvd8vuc0iid" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-test" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2025/08/21/test/" class="article-date">
@@ -111,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/08/21/test/" data-id="cmemvlx990000kcvdbjtd8jf4" data-title="我的第一篇文章" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/08/21/test/" data-id="cmemwnh9d0002ygvdb8qt0516" data-title="我的第一篇文章" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -164,7 +219,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/08/21/hello-world/" data-id="cmemvlx9q0001kcvd7wkgb3d7" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2025/08/21/hello-world/" data-id="cmemwnh980000ygvd289p7805" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -226,6 +281,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2025/08/22/C%E8%AF%AD%E8%A8%80%E6%8C%87%E9%92%88%E7%AC%94%E8%AE%B0/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2025/08/21/test/">我的第一篇文章</a>
