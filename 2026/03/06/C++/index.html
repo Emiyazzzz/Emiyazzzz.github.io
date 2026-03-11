@@ -1,0 +1,191 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Emiya的个人空间 | Emiya的个人空间</title><meta name="author" content="Emiya"><meta name="copyright" content="Emiya"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="基本变量的初始化相较于C语言初始化的基础上，C++新增了直接初始化(使用())和列表初始化(使用{})。建议使用{}。 1234&#x2F;&#x2F;直接初始化int a(1);&#x2F;&#x2F;列表初始化int a&#123;1&#125;;  C++是严格类型检查，列表初始化有窄化检查，例如 1int a&#123;3.14&#125;&#x2F;&#x2F;会报错，而C语言只会警告  输入和输出C语言的输入需要占位符，取变量的地址，输入格式的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Emiya的个人空间">
+<meta property="og:url" content="http://example.com/2026/03/06/C++/index.html">
+<meta property="og:site_name" content="Emiya的个人空间">
+<meta property="og:description" content="基本变量的初始化相较于C语言初始化的基础上，C++新增了直接初始化(使用())和列表初始化(使用{})。建议使用{}。 1234&#x2F;&#x2F;直接初始化int a(1);&#x2F;&#x2F;列表初始化int a&#123;1&#125;;  C++是严格类型检查，列表初始化有窄化检查，例如 1int a&#123;3.14&#125;&#x2F;&#x2F;会报错，而C语言只会警告  输入和输出C语言的输入需要占位符，取变量的地址，输入格式的">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/head.jpg">
+<meta property="article:published_time" content="2026-03-06T13:36:08.664Z">
+<meta property="article:modified_time" content="2026-03-06T14:30:34.366Z">
+<meta property="article:author" content="Emiya">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/head.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "url": "http://example.com/2026/03/06/C++/",
+  "image": "http://example.com/img/head.jpg",
+  "datePublished": "2026-03-06T13:36:08.664Z",
+  "dateModified": "2026-03-06T14:30:34.366Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Emiya",
+      "url": "http://example.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2026/03/06/C++/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Emiya的个人空间',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/49979385_p0_master1200.jpg);"></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Emiya的个人空间</span></a><a class="nav-page-title" href="/"><span class="site-name">Emiya的个人空间</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  Back to Home</span></span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">Untitled</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-03-06T13:36:08.664Z" title="Created 2026-03-06 21:36:08">2026-03-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-03-06T14:30:34.366Z" title="Updated 2026-03-06 22:30:34">2026-03-06</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="基本变量的初始化"><a href="#基本变量的初始化" class="headerlink" title="基本变量的初始化"></a>基本变量的初始化</h1><p>相较于C语言初始化的基础上，C++新增了直接初始化(使用())和列表初始化(使用{})。建议使用{}。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//直接初始化</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">a</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line"><span class="comment">//列表初始化</span></span><br><span class="line"><span class="type">int</span> a&#123;<span class="number">1</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>C++是<strong>严格类型检查</strong>，列表初始化有窄化检查，例如</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a&#123;<span class="number">3.14</span>&#125;<span class="comment">//会报错，而C语言只会警告</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="输入和输出"><a href="#输入和输出" class="headerlink" title="输入和输出"></a>输入和输出</h1><p>C语言的输入需要占位符，取变量的地址，输入格式的分隔符，C++的输入只需要变量名即可，分隔符默认为空白</p>
+<p>C++的输出只需要变量名，不需要占位符</p>
+<p>&lt;&lt;:输入插入符号</p>
+<p>&gt;&gt;:提取符号</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a;</span><br><span class="line"><span class="type">char</span> b;</span><br><span class="line">cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line">cout&lt;&lt;<span class="string">&quot;a=&quot;</span>&lt;&lt;a&lt;&lt;<span class="string">&quot;b=&quot;</span>&lt;&lt;b&lt;&lt;endl;<span class="comment">//endl是返回换行符的标时</span></span><br></pre></td></tr></table></figure>
+
+<p><code>cin</code>和<code>cout</code>不可直接输入输出结构体</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span>&#123;</span><br><span class="line">   <span class="type">int</span> id;</span><br><span class="line">   <span class="type">char</span> name[<span class="number">32</span>];</span><br><span class="line">&#125;</span><br><span class="line">	Node n1;</span><br><span class="line">	cin&gt;&gt;n1;  <span class="comment">//错</span></span><br><span class="line">	cin&gt;&gt;n<span class="number">1.</span>id&gt;&gt;n<span class="number">1.</span>name<span class="comment">//对</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Const修饰指针"><a href="#Const修饰指针" class="headerlink" title="Const修饰指针"></a>Const修饰指针</h1><p>C语言可以通过修改指针的方式修改const变量，而C++不可以，会报错</p>
+<p>C++中的const修饰的变量认为是常数，即在编译时，使用const变量的位置直接替换成常数</p>
+<p>C++中的const修饰的变量可以作为数组长度，而C不可以</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> n1=<span class="number">10</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> n2=<span class="number">20</span>;</span><br><span class="line"><span class="type">int</span> arr[n2]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="comment">//修改const变量时，必须进行转换</span></span><br><span class="line"><span class="type">int</span>* n2p=<span class="built_in">const_cast</span>&lt;<span class="type">int</span>*&gt;(&amp;n2);</span><br><span class="line">*n2p=<span class="number">100</span>;</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;n2=&quot;</span> &lt;&lt; n2 &lt;&lt; endl;<span class="comment">//此处的n2编译时替换为常数</span></span><br><span class="line">cout &lt;&lt; <span class="string">&quot;*n2p=&quot;</span> &lt;&lt; *n2p &lt;&lt; endl;</span><br><span class="line"><span class="comment">//结果为n2=20，*n2p=100</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>const修饰指针的情况：能力可缩小，不可放大</strong></p>
+<p>能力强的指针可以赋值给能力小的指针，<strong>高权限的资源，交给低权限的指针去管理</strong> —— 编译器认为这是安全的（因为低权限指针不会做超出原资源权限的操作）。</p>
+<p><strong>高能力</strong>：<code>int*</code>能修改指向的值，能修改指针指向</p>
+<p><strong>中能力</strong>：<code>const int*</code>只能读指向的值，能修改指针朝向，但不能修改指向的值</p>
+<p><strong>低能力</strong>：<code>const int* const</code>不能修改指向的值，不能修改指针朝向</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 高权限资源：普通int变量（可读写）</span></span><br><span class="line">    <span class="type">int</span> n = <span class="number">10</span>;</span><br><span class="line">    <span class="type">int</span>* p_high = &amp;n; <span class="comment">// 高能力指针（可读写值+改指向）</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 场景1：高能力 → 中能力（合法）</span></span><br><span class="line">    <span class="type">const</span> <span class="type">int</span>* p_mid = p_high; </span><br><span class="line">    <span class="comment">// p_mid 只能读值，不能改值 → 权限缩小，安全</span></span><br><span class="line">    cout &lt;&lt; *p_mid &lt;&lt; endl; <span class="comment">// 合法：读值</span></span><br><span class="line">    <span class="comment">// *p_mid = 20; // 报错：中能力指针无写权限</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 场景2：高能力 → 低能力（合法）</span></span><br><span class="line">    <span class="type">const</span> <span class="type">int</span>* <span class="type">const</span> p_low = p_high;</span><br><span class="line">    <span class="comment">// p_low 既不能改值，也不能改指向 → 权限进一步缩小，安全</span></span><br><span class="line">    cout &lt;&lt; *p_low &lt;&lt; endl; <span class="comment">// 合法：读值</span></span><br><span class="line">    <span class="comment">// p_low = &amp;m; // 报错：低能力指针无改指向权限</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 反向验证：低能力 → 高能力（非法）</span></span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> m = <span class="number">20</span>;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span>* p_mid2 = &amp;m; <span class="comment">// 中能力指针（对应只读资源）</span></span><br><span class="line">    <span class="comment">// int* p_high2 = p_mid2; // 报错：低能力→高能力，权限放大，不安全</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>核心是编译器的安全校验逻辑：<br>能力缩小（合法）：<br>比如把 int* 赋值给 const int*，相当于「本来能随便改的资源，现在只允许读」—— 不会破坏原资源的约束，编译器允许。<br>能力放大（非法）：<br>比如把 const int* 赋值给 int*，相当于「本来只能读的常量资源，现在允许通过指针修改」—— 这违背了 const 定义的初衷（常量不可修改），编译器直接报错拦截。</p>
+<p>**!**指针变量名之前的const，赋值时不考虑能力是否缩小</p>
+<p>例如，<code>int*const p</code>在参与赋值时，可以认为其是高能力指针</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://example.com">Emiya</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://example.com/2026/03/06/C++/">http://example.com/2026/03/06/C++/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/head.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/03/03/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" title=""><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2"></div></div><div class="info-2"><div class="info-item-1">名词解释MAC地址：在数据链路层，每一个网卡出厂就自带，作用是在同一局域网内找设备，相当于设备的身份证号 IP地址：在网络层，作用为在网络中定位设备 DNS（域名系统）：作用是把域名与IP地址互相翻译 网关：作用是跨网段访问的出口 子网掩码：作用是判断两个IP在不在同一个局域网内 ARP协议：作用是通过IP找MAC DHCP：作用是自动分配IP，子网掩码，网关，DNS HTTP：超文本传输协议，明文传输，不加密，不安全，数据能被捕获 HTTPS：HTTP+加密层（SSL&#x2F;TLS)，加密传输，安全 TCP：传输层协议，可靠，面向连接，慢一点但稳定，会三次握手四次挥手，用于网页，文件传输，邮件 UDP：传输层协议，不可靠，无连接，快，不握手，发完不管，用于游戏，直播，视频通话，DNS **SSH：**安全远程登录协议，加密，安全，用于远程连服务器 ICMP：网络层协议，作用是网络诊断，报错 FTP：文件传输协议，作用是传文件 网络模型OSI七层模型OSI模型将网络通信过程分为七个层次。每一层都负责特定的网络功能，并为上层提供服务。七层模型包括： 物理层： 物理层主要负责传输...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/head.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Emiya</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">17</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">欢迎٩(◕‿◕｡)۶<br>主要记录学习过程中的笔记，后续可能会发一些其他的<br>邮箱：3436931453@qq.com</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%8F%98%E9%87%8F%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.</span> <span class="toc-text">基本变量的初始化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA"><span class="toc-number">2.</span> <span class="toc-text">输入和输出</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Const%E4%BF%AE%E9%A5%B0%E6%8C%87%E9%92%88"><span class="toc-number">3.</span> <span class="toc-text">Const修饰指针</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/06/C++/" title="Untitled">Untitled</a><time datetime="2026-03-06T13:36:08.664Z" title="Created 2026-03-06 21:36:08">2026-03-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/03/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" title="Untitled">Untitled</a><time datetime="2026-03-03T05:00:27.314Z" title="Created 2026-03-03 13:00:27">2026-03-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/11/06/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" title="栈和队列"><img src="/img/x1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="栈和队列"/></a><div class="content"><a class="title" href="/2025/11/06/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" title="栈和队列">栈和队列</a><time datetime="2025-11-06T09:45:50.398Z" title="Created 2025-11-06 17:45:50">2025-11-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/11/03/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%E2%80%94%E9%93%BE%E6%8E%A5%EF%BC%8C%E8%A3%85%E8%BD%BD%E4%B8%8E%E5%BA%93/" title="程序员的自我修养—链接，装载与库"><img src="/img/text18.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="程序员的自我修养—链接，装载与库"/></a><div class="content"><a class="title" href="/2025/11/03/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%E2%80%94%E9%93%BE%E6%8E%A5%EF%BC%8C%E8%A3%85%E8%BD%BD%E4%B8%8E%E5%BA%93/" title="程序员的自我修养—链接，装载与库">程序员的自我修养—链接，装载与库</a><time datetime="2025-11-03T09:14:08.503Z" title="Created 2025-11-03 17:14:08">2025-11-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2025/09/24/Linux%E7%B3%BB%E7%BB%9F/" title="Linux系统"><img src="/img/44293155_p0_master1200.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux系统"/></a><div class="content"><a class="title" href="/2025/09/24/Linux%E7%B3%BB%E7%BB%9F/" title="Linux系统">Linux系统</a><time datetime="2025-09-24T13:35:27.872Z" title="Created 2025-09-24 21:35:27">2025-09-24</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2025 - 2026 By Emiya</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.3</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
